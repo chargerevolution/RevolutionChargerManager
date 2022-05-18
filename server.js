@@ -15,7 +15,7 @@ wss.on("connection", (ws) => {
   ws.on('message', message => {
     console.log(`Received message => ${message}`)
     wss.clients.forEach((client) => {
-      client.send(message);
+      client.send(message.toString());
     });
   })
 });
